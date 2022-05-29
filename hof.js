@@ -47,7 +47,32 @@ const prod2 = function (ac, cv) {
 var res = arr.reduce(prod2)
 console.log('res:', res)
 
+console.log("----------chaining---------")
 
+// Given an array of numbers find the sum of odd elements
+
+var newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+const oddSum = newArr.filter((el) => {
+    return el%2  != 0
+}).reduce((ac, cv) => {
+    return ac+cv
+})
+
+console.log('oddSum:', oddSum)
+
+
+//Given an array of numbers find the sum of cubes if the number is divisible by 3
+
+const cubeSum = newArr.filter((el) => {
+    return el%3 == 0
+}).map((el) => {
+   return el**3
+}).reduce((ac, cv) => {
+    return ac+cv
+})
+
+console.log('cubeSum:', cubeSum)
 
 
 
