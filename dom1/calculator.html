@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 40%;
+            border: 2px solid grey;
+        }
+        input{
+            width: 98.5%;
+            padding: 5% 0;
+        }
+         .btn1{
+            grid-area: one;
+        }
+        .btn2{
+            grid-area: two;
+        }
+        .btn3{
+            grid-area: three;
+        }
+        .btn4{
+            grid-area: four;
+        }
+        .btn5{
+            grid-area: five;
+        }
+        .btn6{
+            grid-area: six;
+        }
+        .btn7{
+            grid-area: sev;
+        }
+        .btn8{
+            grid-area: eight;
+        }
+        .btn9{
+            grid-area: nine;
+        }
+        .btn0{
+            grid-area: zer0;
+        }
+        .btnClear{
+            grid-area: clear;
+        }
+        .subdiv{
+            display: grid;
+            grid-template-areas: 
+            'one two three'
+            'four five six'
+            'sev eight nine'
+            'zer0 clear clear';
+            width: 100%;
+        }
+        button{
+            padding: 20% 0%;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input type="text">
+        <div class="subdiv">
+            <button class="btn1">1</button>
+            <button class="btn2">2</button>
+            <button class="btn3">3</button>
+            <button class="btn4">4</button>
+            <button class="btn5">5</button>
+            <button class="btn6">6</button>
+            <button class="btn7">7</button>
+            <button class="btn8">8</button>
+            <button class="btn9">9</button>
+            <button class="btn0">0</button>
+            <button class="btnClear">clear</button>
+        </div>
+    </div>
+</body>
+</html>
