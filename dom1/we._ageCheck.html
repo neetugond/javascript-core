@@ -19,13 +19,16 @@
 <script>
     function checkAge(){
         let age=document.getElementById('input').value;
+        // let ptag = document.querySelector('p')
         if(age > 18){
+            // ptag.textContent="you can drive in india"
     document.querySelector('p').textContent="you can drive in india"
         }else if(age < 18){
             document.querySelector('p').textContent='you cannot drive in India'
         }else if(age == 18){
             document.querySelector('p').textContent="you are just old enough to drive"
         }
+        document.querySelector('input').value=''; // for making empty inbox after clicking on submit button
     }
     
 </script>
