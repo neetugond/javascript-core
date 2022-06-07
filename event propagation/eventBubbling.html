@@ -50,15 +50,14 @@
 
     </div>
     <script>
+        // bydefault the mode is event bubbling
         const parentId = document.querySelector('#parentId');
         const childId = document.getElementById('childId');
         const parentCall =()=>{
             alert('parent div call');
-            console.log("parent div call")
         }
         const childCall =()=>{
             alert('child div call');
-            console.log("child div call")
         }
         // or
         // parentId.addEventListener('click', parentCall) //false(default)
