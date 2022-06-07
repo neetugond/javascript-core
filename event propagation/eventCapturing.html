@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parentId{
+ border: 1px solid red;
+ background-color: grey;
+ width: 40%;
+ height: 500px;
+ margin: auto;
+        }
+        #childId{
+ border: 1px solid red;
+ background-color: skyblue ;
+ margin-top: 50px;
+ width: 50%;
+ height: 200px;
+ margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- event capturing after click on child div 1st parent div call than child div call -->
+    
+    <div id="parentId">
+        <div  id="childId" >
+            <h1>event capturing</h1>
+        </div>
+
+    </div>
+    <script>
+        const parentId = document.querySelector('#parentId');
+        const childId = document.getElementById('childId');
+        const parentCall =()=>{
+            alert('parent div call');
+            console.log("parent div call")
+        }
+        const childCall =()=>{
+            alert('child div call');
+            console.log("child div call")
+        }
+       
+        parentId.addEventListener('click', parentCall, true)
+        childId.addEventListener('click', childCall, true )
+
+        // by default it is event bubbling 3rd argument is false in event capturing it will be true
+    </script>
+</body>
+</html>

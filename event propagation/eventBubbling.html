@@ -1,0 +1,70 @@
+<!-- // event propagation- the propagation mode determines in which order the elements receive the event.
+
+// event bubbling and capturing are two ways of event propation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event.
+
+// The event propagation mode determines in which order the elements receive the event
+
+// capture phase - going from the window to the event target phase (window, document, html body table tbody tr td etc.)
+// target phase - it is the target phase
+// bubble phase- from the event target parent back to the window
+
+// event bubbling defination - with the event bubbling, the event is first captured ans handled by the innermost element and then propagated to outer elements. bottom to top
+
+// event capturing - with event capturing, the event is first captured by the outermost element and propagated to the inner elements.
+// top to bottom
+//capturing is also called "trickling", which helps remember the propagation order -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parentId{
+ border: 1px solid red;
+ background-color: grey;
+ width: 40%;
+ height: 500px;
+ margin: auto;
+        }
+        #childId{
+ border: 1px solid red;
+ background-color: pink;
+ margin-top: 50px;
+ width: 50%;
+ height: 200px;
+ margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- event bubbling after click on child div 1st child div call than parent div call -->
+    
+    <div onclick="parentCall()" id="parentId">
+        <div onclick="childCall()" id="childId" >
+            <h1>event bubbling</h1>
+        </div>
+
+    </div>
+    <script>
+        const parentId = document.querySelector('#parentId');
+        const childId = document.getElementById('childId');
+        const parentCall =()=>{
+            alert('parent div call');
+            console.log("parent div call")
+        }
+        const childCall =()=>{
+            alert('child div call');
+            console.log("child div call")
+        }
+        // or
+        // parentId.addEventListener('click', parentCall) //false(default)
+        // childId.addEventListener('click', childCall ) //false(default)
+
+        // by default it is evetn bubbling 3rd argument is false in event capturing it will be true
+    </script>
+</body>
+</html>
