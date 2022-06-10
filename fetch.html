@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+border: 1px solid green;
+margin: auto;
+width: 50% ;
+        }
+        h3{
+            text-align: center;
+        }
+        #subdiv{
+            margin: auto;
+            width: 80%;
+            background: yellow;
+            padding: 2%;
+
+        }
+        #btn{
+           background-color: black;
+           color: white;
+           border: none;
+           padding: 1%;
+           border-radius: 5px;
+           margin: 5% 44%  ;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Jokes</h3>
+    
+    <div id="subdiv">
+        jokes is loading...
+    </div>
+    <button id="btn" class="btn">Next joke</button>
+
+</div>
+    <script>
+const subdiv = document.getElementById('subdiv');
+const btn = document.getElementById('btn')
+
+// // normal way of fetching data through promise
+// const getData =()=>{
+//     const setHeader ={
+//     headers:{
+//         Accept:"application/json"
+//     }
+// }
+
+//     fetch('https://icanhazdadjoke.com', setHeader)
+//     .then((res)=>res.json())
+//     .then((data)=>{
+//         console.log(data)
+//         subdiv.innerHTML = data.joke
+//     })
+//     .catch((error)=>{
+//         console.log(error)
+//     })
+
+// }
+
+// es8 feature async and wait for fetching the data
+const getData = async()=>{
+    try{
+        const setHeader ={
+    headers:{
+        Accept:"application/json"
+    }
+}
+
+    const response = await fetch('https://icanhazdadjoke.com', setHeader)
+    const data = await response.json()
+    console.log('data:', data)
+    subdiv.innerHTML = data.joke
+    }catch(err){
+        console.log(err)
+    }
+   
+
+}
+
+btn.addEventListener('click', getData);
+getData()
+
+
+    </script>
+</body>
+
+</html>
