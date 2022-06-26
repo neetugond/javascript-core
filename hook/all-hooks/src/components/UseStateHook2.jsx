@@ -11,7 +11,7 @@ const UseStateHook2 = () => {
       <div>
           <h1>useState hook input example</h1>
           <input type="text" onChange={inputText} />
-          {/* <button onClick={inputText}>submit</button> */}
+          {/* <button onClick={}>submit</button> */}
           <h3>{ inputValue}</h3>
       </div>
       
