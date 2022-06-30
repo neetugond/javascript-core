@@ -1,9 +1,11 @@
-import react from 'react'
+import react, { useContext } from 'react'
+import {AppContext} from './UseContextHook'
 
-function User(){
+function User() {
+    const {username} = useContext(AppContext)
     return(
         <div>
-            <h1>User</h1>
+            <h2>User:{username} </h2>
         </div>
     )
 }
